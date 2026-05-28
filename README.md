@@ -8,9 +8,8 @@ Users can create virtual study rooms, join sessions with friends, communicate th
 
 ## Live Deployment
 
-* Frontend: ADD_FRONTEND_URL
-* Backend API: ADD_BACKEND_URL
-
+* Frontend: https://study-platform-hazel.vercel.app
+* Backend API: https://study-platform-iwig.onrender.com/docs
 ---
 
 ## Features Implemented
