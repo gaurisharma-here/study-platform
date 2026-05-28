@@ -9,7 +9,8 @@ Users can create virtual study rooms, join sessions with friends, communicate th
 ## Live Deployment
 
 * Frontend: https://study-platform-hazel.vercel.app
-* Backend API: https://study-platform-iwig.onrender.com/docs
+* Backend API: https://study-platform-iwig.onrender.com
+* API Documentation: https://study-platform-iwig.onrender.com/docs
 ---
 
 ## Features Implemented
@@ -85,8 +86,7 @@ Users can create virtual study rooms, join sessions with friends, communicate th
 ### 1. Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPO_LINK
-cd STUDYROOM
+git clone https://github.com/gaurisharma-here/study-platform.git
 ```
 
 ---
@@ -184,3 +184,5 @@ studyroom/
 * Environment variables are excluded using `.gitignore`
 * No credentials or secrets are exposed publicly
 * Project developed individually as part of assessment submission
+
+> Note: Backend is hosted on Render free tier, so the first request may take a few seconds to wake the server.
