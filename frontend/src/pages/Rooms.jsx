@@ -56,7 +56,7 @@ const Rooms = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold">Study Rooms</h1>
-            <p className="text-gray-400 mt-1">Join or create a study room</p>
+            <p className="text-gray-500 mt-1">Join or create a study room</p>
           </div>
           <div className="flex gap-3">
             <button
@@ -65,9 +65,9 @@ const Rooms = () => {
                 setShowCreate(false);
                 setError("");
               }}
-              className="border border-gray-700 hover:border-purple-500 text-white px-4 py-2 rounded-lg transition"
+              className="border border-gray-700 hover:border-gray-500 text-white px-4 py-2 rounded-lg transition"
             >
-              🔑 Join Room
+              Join Room
             </button>
             <button
               onClick={() => {
@@ -75,15 +75,15 @@ const Rooms = () => {
                 setShowJoin(false);
                 setError("");
               }}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition"
+              className="bg-white hover:bg-gray-200 text-gray-950 px-4 py-2 rounded-lg font-medium transition"
             >
-              ➕ Create Room
+              Create Room
             </button>
           </div>
         </div>
 
         {error && (
-          <div className="bg-red-900 border border-red-700 text-red-300 px-4 py-3 rounded-lg mb-6 text-sm">
+          <div className="border border-red-800 text-red-300 px-4 py-3 rounded-lg mb-6 text-sm">
             {error}
           </div>
         )}
@@ -99,7 +99,7 @@ const Rooms = () => {
                 onChange={(e) =>
                   setCreateForm({ ...createForm, name: e.target.value })
                 }
-                className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                className="w-full bg-gray-950 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500"
                 required
               />
               <textarea
@@ -108,20 +108,20 @@ const Rooms = () => {
                 onChange={(e) =>
                   setCreateForm({ ...createForm, description: e.target.value })
                 }
-                className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                className="w-full bg-gray-950 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500"
                 rows={3}
               />
               <div className="flex gap-3">
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition"
+                  className="bg-white hover:bg-gray-200 text-gray-950 px-6 py-2 rounded-lg font-medium transition"
                 >
                   Create
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowCreate(false)}
-                  className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition"
+                  className="border border-gray-700 hover:border-gray-500 text-white px-6 py-2 rounded-lg transition"
                 >
                   Cancel
                 </button>
@@ -139,19 +139,19 @@ const Rooms = () => {
                 placeholder="Enter invite code"
                 value={joinCode}
                 onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
-                className="flex-1 bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                className="flex-1 bg-gray-950 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500"
                 required
               />
               <button
                 type="submit"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition"
+                className="bg-white hover:bg-gray-200 text-gray-950 px-6 py-2 rounded-lg font-medium transition"
               >
                 Join
               </button>
               <button
                 type="button"
                 onClick={() => setShowJoin(false)}
-                className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition"
+                className="border border-gray-700 hover:border-gray-500 text-white px-6 py-2 rounded-lg transition"
               >
                 Cancel
               </button>
@@ -160,11 +160,11 @@ const Rooms = () => {
         )}
 
         {loading ? (
-          <div className="text-gray-400">Loading rooms...</div>
+          <div className="text-gray-500">Loading rooms...</div>
         ) : rooms.length === 0 ? (
           <div className="text-center py-20">
-            <div className="text-6xl mb-4">📚</div>
-            <p className="text-gray-400 text-lg">
+            <div className="text-5xl mb-4">📚</div>
+            <p className="text-gray-500 text-lg">
               No rooms yet. Create or join one!
             </p>
           </div>

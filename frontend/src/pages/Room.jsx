@@ -114,23 +114,24 @@ const Room = () => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold">{room?.name}</h1>
-            <p className="text-gray-400 text-sm">{room?.description}</p>
+            <p className="text-gray-500 text-sm">{room?.description}</p>
           </div>
           <div className="flex items-center gap-3">
-            <span
-              className={`text-xs px-3 py-1 rounded-full ${isConnected ? "bg-green-900 text-green-300" : "bg-red-900 text-red-300"}`}
-            >
-              {isConnected ? "🟢 Connected" : "🔴 Disconnected"}
+            <span className="flex items-center gap-1.5 text-xs border border-gray-800 text-gray-400 px-3 py-1 rounded-full">
+              <span
+                className={`w-1.5 h-1.5 rounded-full ${isConnected ? "bg-green-400" : "bg-red-400"}`}
+              />
+              {isConnected ? "Connected" : "Disconnected"}
             </span>
-            <span className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
+            <span className="text-xs border border-gray-800 text-gray-400 px-3 py-1 rounded-full">
               🔑 {room?.invite_code}
             </span>
             {room?.owner_id === user?.id && (
               <button
                 onClick={handleDeleteRoom}
-                className="text-red-400 hover:text-red-300 text-sm transition"
+                className="text-gray-500 hover:text-red-400 text-sm transition"
               >
-                🗑️ Delete
+                Delete
               </button>
             )}
           </div>
@@ -140,23 +141,23 @@ const Room = () => {
           <div className="lg:col-span-2 flex flex-col gap-6">
             {/* Timer */}
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
-              <p className="text-gray-400 text-sm mb-2">Study Timer</p>
+              <p className="text-gray-500 text-sm mb-2">Study Timer</p>
               <p className="text-5xl font-mono font-bold text-white mb-4">
                 {timer.format()}
               </p>
               {!activeSession ? (
                 <button
                   onClick={handleStartSession}
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+                  className="bg-white hover:bg-gray-200 text-gray-950 px-8 py-3 rounded-lg font-semibold transition"
                 >
-                  ▶ Start Session
+                  Start Session
                 </button>
               ) : (
                 <button
                   onClick={handleEndSession}
-                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+                  className="border border-gray-700 hover:border-red-400 hover:text-red-400 text-white px-8 py-3 rounded-lg font-semibold transition"
                 >
-                  ⏹ End Session
+                  End Session
                 </button>
               )}
             </div>
@@ -167,7 +168,7 @@ const Room = () => {
               style={{ height: "400px" }}
             >
               <div className="px-4 py-3 border-b border-gray-800">
-                <h2 className="font-semibold">💬 Room Chat</h2>
+                <h2 className="font-semibold">Room Chat</h2>
               </div>
               <div className="flex-1 overflow-y-auto p-4 space-y-3">
                 {messages.length === 0 ? (
@@ -184,7 +185,7 @@ const Room = () => {
                         {msg.username}
                       </span>
                       <div
-                        className={`px-4 py-2 rounded-2xl text-sm max-w-xs ${msg.user_id === user?.id ? "bg-purple-600 text-white" : "bg-gray-800 text-gray-200"}`}
+                        className={`px-4 py-2 rounded-2xl text-sm max-w-xs ${msg.user_id === user?.id ? "bg-white text-gray-950" : "bg-gray-800 text-gray-200"}`}
                       >
                         {msg.content}
                       </div>
@@ -202,11 +203,11 @@ const Room = () => {
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   placeholder="Type a message..."
-                  className="flex-1 bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-500"
+                  className="flex-1 bg-gray-950 border border-gray-700 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gray-500"
                 />
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm transition"
+                  className="bg-white hover:bg-gray-200 text-gray-950 px-4 py-2 rounded-lg text-sm font-medium transition"
                 >
                   Send
                 </button>
@@ -218,7 +219,7 @@ const Room = () => {
           <div className="flex flex-col gap-4">
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
               <h2 className="font-semibold mb-3">
-                🟢 Online ({onlineUsers.length})
+                Online ({onlineUsers.length})
               </h2>
               {onlineUsers.length === 0 ? (
                 <p className="text-gray-500 text-sm">No one online yet</p>
@@ -237,14 +238,12 @@ const Room = () => {
             </div>
 
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
-              <h2 className="font-semibold mb-3">
-                👥 Members ({members.length})
-              </h2>
+              <h2 className="font-semibold mb-3">Members ({members.length})</h2>
               <div className="space-y-2">
                 {members.map((m) => (
                   <div key={m.id} className="flex items-center justify-between">
                     <span className="text-sm text-gray-300">{m.username}</span>
-                    <span className="text-xs text-orange-400">
+                    <span className="text-xs text-gray-500">
                       🔥 {m.current_streak}
                     </span>
                   </div>

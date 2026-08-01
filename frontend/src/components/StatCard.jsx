@@ -1,9 +1,9 @@
-const StatCard = ({ title, value, icon, color }) => {
+const StatCard = ({ title, value, icon }) => {
   return (
-    <div className="bg-gray-800 border border-gray-700 rounded-xl p-5">
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-2xl">{icon}</span>
-        <span className={`text-xs px-2 py-1 rounded-full ${color}`}>
+        <span className="text-xl">{icon}</span>
+        <span className="text-xs text-gray-500 uppercase tracking-wide">
           {title}
         </span>
       </div>

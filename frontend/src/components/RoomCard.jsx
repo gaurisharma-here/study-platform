@@ -6,11 +6,11 @@ const RoomCard = ({ room }) => {
   return (
     <div
       onClick={() => navigate(`/rooms/${room.id}`)}
-      className="bg-gray-800 border border-gray-700 rounded-xl p-5 cursor-pointer hover:border-purple-500 hover:bg-gray-750 transition-all duration-200"
+      className="bg-gray-900 border border-gray-800 rounded-xl p-5 cursor-pointer hover:border-gray-700 transition-all duration-200"
     >
       <div className="flex items-start justify-between mb-3">
         <h3 className="text-white font-semibold text-lg">{room.name}</h3>
-        <span className="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">
+        <span className="border border-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">
           {room.member_count} members
         </span>
       </div>

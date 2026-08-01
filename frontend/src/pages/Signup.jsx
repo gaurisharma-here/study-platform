@@ -47,7 +47,7 @@ const Signup = () => {
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition"
+              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500 transition"
               placeholder="you@email.com"
               required
             />
@@ -58,7 +58,7 @@ const Signup = () => {
               type="text"
               value={form.username}
               onChange={(e) => setForm({ ...form, username: e.target.value })}
-              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition"
+              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500 transition"
               placeholder="studymaster"
               required
             />
@@ -69,7 +69,7 @@ const Signup = () => {
               type="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
-              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition"
+              className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-gray-500 transition"
               placeholder="••••••••"
               required
             />
@@ -77,7 +77,7 @@ const Signup = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white py-3 rounded-lg font-semibold transition"
+            className="w-full bg-white hover:bg-gray-200 disabled:opacity-50 text-gray-950 py-3 rounded-lg font-semibold transition"
           >
             {loading ? "Creating account..." : "Create Account"}
           </button>
@@ -85,7 +85,7 @@ const Signup = () => {
 
         <p className="text-center text-gray-400 mt-6 text-sm">
           Already have an account?{" "}
-          <Link to="/login" className="text-purple-400 hover:text-purple-300">
+          <Link to="/login" className="text-white hover:text-gray-300">
             Login
           </Link>
         </p>
