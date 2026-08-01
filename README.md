@@ -86,7 +86,7 @@ Users can create virtual study rooms, join sessions with friends, communicate th
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/gaurisharma-here/study-platform.git
+git clone https://github.com/heygaurihere/study-platform.git
 ```
 
 ---
